@@ -1,16 +1,21 @@
+import { fetchMovies } from "API";
+import { NavLink } from "react-router-dom";
+import Home from "./Home/Home";
+
 export const App = () => {
+  async function getMovies() {
+    const resp = await fetchMovies();
+    console.log(resp);
+  }
+
+  getMovies();
+
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
-  );
+    <header>
+      <nav>
+        <NavLink to={'/'} element={<Home />} />
+        {/* <NavLink to={'/movies'} element={<Movies />} /> */}
+      </nav>
+    </header>
+  )
 };
