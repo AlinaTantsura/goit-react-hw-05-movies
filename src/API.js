@@ -2,13 +2,17 @@ import axios from "axios";
 
 const optionsAxios = {
     baseURL: 'https://api.themoviedb.org',
-    params: {
-        key: 'f61627c9cfc49b64051fa8ee64af0381',
-    }
+    headers: {
+    // accept: 'application/json',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNjE2MjdjOWNmYzQ5YjY0MDUxZmE4ZWU2NGFmMDM4MSIsInN1YiI6IjY1N2Q4NDZiYjdmYmJkMDZjODMwNTVkZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.7NWSj1-y7xBlR5IWWT6t3fEcBUOHkAiJumA6Nwpm4FQ'
+  }
 }
 
 const fetchMovies = async () => {
-  const response = await axios.get('/trending/get-trending', optionsAxios);
-    return response;
+  return await axios.get('/3/trending/all/day?language=en-US', optionsAxios);
+   
 }
+
+
+
 export { fetchMovies };
