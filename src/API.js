@@ -1,14 +1,14 @@
 import axios from "axios";
 
 const optionsAxios = {
-    baseURL: 'https://api.themoviedb.org/',
+    baseURL: 'https://api.themoviedb.org',
     params: {
-        key: 'fd1282bc892320382c1713167a6f886c',
+        key: 'f61627c9cfc49b64051fa8ee64af0381',
     }
 }
 
 const fetchMovies = async () => {
-  const response = await axios.get('3/trending/all', optionsAxios);
+  const response = await axios.get('/trending/get-trending', optionsAxios);
     return response;
 }
 export { fetchMovies };
