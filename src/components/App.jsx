@@ -1,21 +1,20 @@
 // import { getAllMovies } from "API";
-import { NavLink, Routes, Route } from "react-router-dom";
-import Home from "./Home/Home";
+import { Routes, Route } from "react-router-dom";
+import Movies from "./pages/Movies";
+import HomePage from "./pages/HomePage";
+import Layout from "./Layout/Layout";
 // import React, { useState } from "react";
 
 export const App = () => {
   return (
-    <div>
-    <header>
-      <nav>
-        <NavLink to={'/'} element={<Home />}>Home</NavLink>
-        {/* <NavLink to={'/movies'} element={<Movies />} /> */}
-      </nav>
-    </header>
-
-      <Routes>
-        <Route path='/' element={<Home />}/>
+    <Routes>
+      <Route path='/' element={<Layout/>}>
+        <Route index element={<HomePage />} />
+        <Route path='/movies' element={<Movies />} />
+        <Route path='*' element={<HomePage />} />
+      </Route>
       </Routes>
-    </div>
+  
+      
   )
 };

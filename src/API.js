@@ -13,6 +13,10 @@ const fetchMovies = async () => {
    
 }
 
+async function fetchMoviesBySearchWord(searchWord) {
+  return await axios.get(`/3/search/movie?query=${searchWord}&include_adult=false&language=en-US&page=1`, optionsAxios);
+}
 
 
-export { fetchMovies };
+
+export { fetchMovies, fetchMoviesBySearchWord };
