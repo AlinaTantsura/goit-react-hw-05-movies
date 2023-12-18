@@ -1,6 +1,9 @@
 import { fetchMoviesBySearchWord } from "API";
+// import { useSearchParams } from "react-router-dom";
 
 const Movies = () => {
+    // const searchParams = useSearchParams();
+    // console.log(searchParams);
     function handleSubmit(event) {
         event.preventDefault();
         const searchWord = event.target.elements.search.value;

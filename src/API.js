@@ -8,7 +8,7 @@ const optionsAxios = {
   }
 }
 
-const fetchMovies = async () => {
+async function fetchMovies (){
   return await axios.get('/3/trending/all/day?language=en-US', optionsAxios);
    
 }
@@ -17,6 +17,10 @@ async function fetchMoviesBySearchWord(searchWord) {
   return await axios.get(`/3/search/movie?query=${searchWord}&include_adult=false&language=en-US&page=1`, optionsAxios);
 }
 
+async function fetchMovieDetails(movie_id) {
+  return await axios.get(`/3/movie/${movie_id}`, optionsAxios);
+}
 
 
-export { fetchMovies, fetchMoviesBySearchWord };
+
+export { fetchMovies, fetchMoviesBySearchWord, fetchMovieDetails };
