@@ -1,5 +1,6 @@
 import { fetchMovieDetails } from "API";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const MovieInfo = ({movieId}) => {
 
@@ -8,15 +9,15 @@ const MovieInfo = ({movieId}) => {
         try {
             const resp = await fetchMovieDetails(id);
             setMovieInfo(resp.data);
-            console.log(resp.data);
+            // console.log(resp.data);
         }
         catch (error) {
             console.log(error.message)
         }
     }
     useEffect(() => {
-        getMovieInfo('272');
-    }, [])
+        getMovieInfo(movieId);
+    }, [movieId])
     
 
     return (
@@ -30,7 +31,15 @@ const MovieInfo = ({movieId}) => {
                 <p>{movieInfo.overview}</p>
                 <h3>Genres</h3>
                 {movieInfo.genres.map(item => (<p key={item.id}>{item.name}</p>))}
-            </>
+             <ul>
+                <li>
+                    <Link to='cast'>Cast</Link>
+                </li>
+                <li>
+                    <Link to='reviews'>Review</Link>
+                </li>
+            </ul>
+                </>
             )}
     </>
     )

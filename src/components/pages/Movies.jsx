@@ -1,27 +1,35 @@
-import { fetchMoviesBySearchWord } from "API";
-// import { useSearchParams } from "react-router-dom";
+// import { fetchMoviesBySearchWord } from "API";
+
+import MovieList from "components/MovieList/MovieList";
+import { useSearchParams } from "react-router-dom";
+
 
 const Movies = () => {
-    // const searchParams = useSearchParams();
-    // console.log(searchParams);
+    const [searchParams, setSearchParams] = useSearchParams();
+    
     function handleSubmit(event) {
         event.preventDefault();
-        const searchWord = event.target.elements.search.value;
-        getMovies(searchWord)
+        const form = event.target;
+        const searchRequest = form.elements.search.value;
+        
+         if (searchRequest) {
+             setSearchParams({ query: searchRequest });
+        }
+        //  else {
+        //      setSearchParams({}); 
+        // }
+        
+        form.reset();
     
     }
 
-    async function getMovies(searchWord) {
-              try {
-            const resp = await fetchMoviesBySearchWord(searchWord);
-            console.log(resp);
-            }
-            catch{}
-        }
     return (
+        <main>
     <form onSubmit={handleSubmit}>
             <input name="search"/>
             <button type='submit'>Search</button>
-    </form>)
+        </form>
+            {searchParams.get('query') && (<MovieList searchWord={searchParams.get('query')} />)}
+        </main>)
 }
 export default Movies;

@@ -21,6 +21,13 @@ async function fetchMovieDetails(movie_id) {
   return await axios.get(`/3/movie/${movie_id}`, optionsAxios);
 }
 
+async function fetchMovieCast(movie_id) {
+  return await axios.get(`/3/movie/${movie_id}/credits`, optionsAxios);
+}
+
+async function fetchMovieReviews(movie_id) {
+  return await axios.get(`/3/movie/${movie_id}/reviews`, optionsAxios);
+}
 
 
-export { fetchMovies, fetchMoviesBySearchWord, fetchMovieDetails };
+export { fetchMovies, fetchMoviesBySearchWord, fetchMovieDetails, fetchMovieCast, fetchMovieReviews };
