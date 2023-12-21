@@ -1,9 +1,8 @@
-// import { fetchMoviesBySearchWord } from "API";
-
 import MovieList from "components/MovieList/MovieList";
-import { useSearchParams } from "react-router-dom";
+// import { Suspense, lazy } from "react";
+import {  useSearchParams } from "react-router-dom";
 
-
+// const MovieList = lazy(()=> import("../MovieList/MovieList"))
 const Movies = () => {
     const [searchParams, setSearchParams] = useSearchParams();
     
@@ -29,7 +28,11 @@ const Movies = () => {
             <input name="search"/>
             <button type='submit'>Search</button>
         </form>
-            {searchParams.get('query') && (<MovieList searchWord={searchParams.get('query')} />)}
+            {/* {searchParams.get('query') && (<MovieList searchWord={searchParams.get('query')} />)} */}
+            {searchParams.get('query') && (
+                <>
+                    <MovieList searchWord={searchParams.get('query')} />
+                </>)}
         </main>)
 }
 export default Movies;

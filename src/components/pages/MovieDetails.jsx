@@ -1,6 +1,7 @@
 // import { fetchMovieDetails } from "API";
 import BackLink from "components/BackLink/BackLink";
 import MovieInfo from "components/MovieInfo/MovieInfo";
+import { Suspense } from "react";
 import { Outlet, useLocation, useParams } from "react-router-dom";
 
 const MovieDetails = () => {
@@ -13,7 +14,10 @@ const MovieDetails = () => {
         <main>
             <BackLink to={backPage}>BACK</BackLink>
             <MovieInfo movieId={id} />
-            <Outlet/>
+            <Suspense fallback={<div>Loading info...</div>}>
+                <Outlet/>
+            </Suspense>
+            
         </main>
     )
 }
