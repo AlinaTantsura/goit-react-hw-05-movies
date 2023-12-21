@@ -31,14 +31,19 @@ const MovieList = ({ searchWord = '' }) => {
         movies && 
         (<ul>
             {movies.map((movie) => (<ListItem key={movie.id}>
-                {(location.pathname) === '/' && <LinkStyled to={`movies/${movie.id}`} state={{ from:'/'}}>
+                
+                {/* {(location.pathname) === '/' && <LinkStyled to={`movies/${movie.id}`} state={{ from:'/'}}>
+                    {movie.name || movie.title}
+                </LinkStyled>
+                }  */}
+                {(location.pathname) === '/movies' ? <LinkStyled to={`${movie.id}`} state={{ from: `/movies?query=${searchWord}` }}>
+                    {movie.name || movie.title}
+                </LinkStyled>
+                    : <LinkStyled to={`movies/${movie.id}`} state={{ from:'/'}}>
                     {movie.name || movie.title}
                 </LinkStyled>
                 }
-                { (location.pathname) === '/movies' && <LinkStyled to={`${movie.id}`} state={{ from:`/movies?query=${searchWord}`}}>
-                    {movie.name || movie.title}
-                </LinkStyled>
-                }
+            
             </ListItem>))}
         </ul>)
         )

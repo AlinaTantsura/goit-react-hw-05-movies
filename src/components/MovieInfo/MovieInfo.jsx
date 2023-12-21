@@ -1,10 +1,10 @@
 import { fetchMovieDetails } from "API";
 import { Notify } from "notiflix";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const MovieInfo = ({movieId}) => {
-
+    const location = useLocation();
     const [movieInfo, setMovieInfo] = useState(null);
     async function getMovieInfo(id) {
         try {
@@ -19,12 +19,11 @@ const MovieInfo = ({movieId}) => {
     useEffect(() => {
         getMovieInfo(movieId);
     }, [movieId])
-    
 
     return (
     <>
             {movieInfo && (
-                <>
+                <section>
                     <img src={movieInfo.poster_path} alt={movieInfo.title || movieInfo.name} />
                     <h1>{movieInfo.title || movieInfo.name}</h1>
                     <p>User score: {movieInfo.vote_average}</p>
@@ -32,15 +31,16 @@ const MovieInfo = ({movieId}) => {
                     <p>{movieInfo.overview}</p>
                     <h3>Genres</h3>
                     {movieInfo.genres.map(item => (<p key={item.id}>{item.name}</p>))}
+                    <h4>Additional information</h4>
                     <ul>
                         <li>
-                            <Link to='cast'>Cast</Link>
+                            <Link to='cast' state={location.state}>Cast</Link>
                         </li>
                         <li>
-                            <Link to='reviews'>Review</Link>
+                            <Link to='reviews' state={location.state}>Review</Link>
                         </li>
                     </ul>
-                </>
+                </section>
             )}
     </>
     )
