@@ -1,13 +1,27 @@
 {
   "files": {
     "main.css": "/goit-react-hw-05-movies/static/css/main.7acaea2f.css",
-    "main.js": "/goit-react-hw-05-movies/static/js/main.fe64d31a.js",
+    "main.js": "/goit-react-hw-05-movies/static/js/main.020aca36.js",
+    "static/js/7.02313805.chunk.js": "/goit-react-hw-05-movies/static/js/7.02313805.chunk.js",
+    "static/js/76.a42422ed.chunk.js": "/goit-react-hw-05-movies/static/js/76.a42422ed.chunk.js",
+    "static/js/60.8fcc4a6d.chunk.js": "/goit-react-hw-05-movies/static/js/60.8fcc4a6d.chunk.js",
+    "static/js/247.bbed9a40.chunk.js": "/goit-react-hw-05-movies/static/js/247.bbed9a40.chunk.js",
+    "static/js/186.56581c44.chunk.js": "/goit-react-hw-05-movies/static/js/186.56581c44.chunk.js",
+    "static/js/194.b3ca37c6.chunk.js": "/goit-react-hw-05-movies/static/js/194.b3ca37c6.chunk.js",
+    "static/js/686.03019f7d.chunk.js": "/goit-react-hw-05-movies/static/js/686.03019f7d.chunk.js",
     "index.html": "/goit-react-hw-05-movies/index.html",
     "main.7acaea2f.css.map": "/goit-react-hw-05-movies/static/css/main.7acaea2f.css.map",
-    "main.fe64d31a.js.map": "/goit-react-hw-05-movies/static/js/main.fe64d31a.js.map"
+    "main.020aca36.js.map": "/goit-react-hw-05-movies/static/js/main.020aca36.js.map",
+    "7.02313805.chunk.js.map": "/goit-react-hw-05-movies/static/js/7.02313805.chunk.js.map",
+    "76.a42422ed.chunk.js.map": "/goit-react-hw-05-movies/static/js/76.a42422ed.chunk.js.map",
+    "60.8fcc4a6d.chunk.js.map": "/goit-react-hw-05-movies/static/js/60.8fcc4a6d.chunk.js.map",
+    "247.bbed9a40.chunk.js.map": "/goit-react-hw-05-movies/static/js/247.bbed9a40.chunk.js.map",
+    "186.56581c44.chunk.js.map": "/goit-react-hw-05-movies/static/js/186.56581c44.chunk.js.map",
+    "194.b3ca37c6.chunk.js.map": "/goit-react-hw-05-movies/static/js/194.b3ca37c6.chunk.js.map",
+    "686.03019f7d.chunk.js.map": "/goit-react-hw-05-movies/static/js/686.03019f7d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.fe64d31a.js"
+    "static/js/main.020aca36.js"
   ]
 }
