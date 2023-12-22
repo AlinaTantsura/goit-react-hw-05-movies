@@ -1,6 +1,8 @@
 import { fetchMovieReviews } from "API";
+import { Notify } from "notiflix";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import ReviewsList from "./Reviews.styled";
 
 const Reviews = () => {
     const [reviews, setReviews] = useState(null);
@@ -9,6 +11,12 @@ const Reviews = () => {
     async function getMovieReviews(id) {
         try {
             const resp = await fetchMovieReviews(id);
+            const result = resp.data.results;
+            if (result.length === 0) {
+                setReviews(null);
+                Notify.failure("There is no information about reviews(");
+                return;
+            }
             setReviews(resp.data.results);
 
         }
@@ -22,13 +30,15 @@ const Reviews = () => {
     }, [id])
     
     return (
-       !reviews ? (<p>We don't have any reviews for this movie</p>)
-        : (<ul>
-             {reviews.map(({ id, author, content }) => (<li key={id}>
-                <h3>Author: {author}</h3>
-                 <p>{content}</p>
-             </li>))}
-        </ul>)  
+        reviews && (
+            <section>
+                <ReviewsList>
+                    {reviews.map(({ id, author, content }) => (<li key={id}>
+                        <h3>Author: <span>{author}</span></h3>
+                        <p>{content}</p>
+                    </li>))}
+                </ReviewsList>  
+            </section>)
     )
 };
 

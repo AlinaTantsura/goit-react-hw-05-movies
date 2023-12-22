@@ -1,11 +1,13 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { Button, LinkStyled } from "./BackLink.styled";
+
 
 const BackLink = ({to, children}) => {
-    return (<>
-        <Link to={to}>
+    return (<Button>
+        <LinkStyled to={to}>
             {children}
-        </Link>
-    </>)
+        </LinkStyled>
+    </Button>)
 };
 
 export default BackLink;

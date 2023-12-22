@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Form = styled.form(() => {
     return ({
-        paddingTop: "20px",
+        paddingTop: "5px",
         paddingLeft: "20px",
         input: {
             outline: 'none',
