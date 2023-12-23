@@ -1,6 +1,5 @@
 // import { fetchMovieDetails } from "API";
 import BackLink from "components/BackLink/BackLink";
-import { Loader } from "components/Loader/Loader.styled";
 import MovieInfo from "components/MovieInfo/MovieInfo";
 import { Suspense } from "react";
 import { Outlet, useLocation, useParams } from "react-router-dom";
