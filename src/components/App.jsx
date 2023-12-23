@@ -18,7 +18,7 @@ export const App = () => {
           <Route path='cast' element={<Cast /> } />
           <Route path='reviews' element={<Reviews /> } />
         </Route>
-        <Route path='*' element={<HomePage />} />
+        <Route path='*' element={<HomePage isWrong={true} />} />
       </Route>
       </Routes>
   

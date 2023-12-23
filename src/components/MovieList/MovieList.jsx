@@ -5,7 +5,6 @@ import {ListItem, LinkStyled } from "./List.styled";
 import { Notify } from "notiflix";
 
 const MovieList = ({ searchWord = '' }) => {
-    // const [searchParams, setSearchParams] = useSearchParams();
     const location = useLocation();
     const [movies, setMovies] = useState(null);
     const navigate = useNavigate();

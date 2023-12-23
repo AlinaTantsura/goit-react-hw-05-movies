@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import Container from './Container.styled';
 import Header from './Header.styled';
 import  { Navigation, LinkNav } from './Navigation.styled';
+import {Loader} from 'components/Loader/Loader.styled';
 
 const Layout = () => {
     return (
@@ -13,7 +14,7 @@ const Layout = () => {
         <LinkNav to={'/movies'}>Movies</LinkNav>
       </Navigation>
         </Header>
-        <Suspense fallback={<div>Loading page...</div>}>
+        <Suspense fallback={<Loader></Loader>}>
           <Outlet />
         </Suspense>
       </Container>

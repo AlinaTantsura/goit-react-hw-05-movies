@@ -1,9 +1,7 @@
 import MovieList from "components/MovieList/MovieList";
-// import { Suspense, lazy } from "react";
 import {  useSearchParams } from "react-router-dom";
 import Form from "./Form.styled";
 
-// const MovieList = lazy(()=> import("../MovieList/MovieList"))
 const Movies = () => {
     const [searchParams, setSearchParams] = useSearchParams();
     
@@ -15,9 +13,6 @@ const Movies = () => {
          if (searchRequest) {
              setSearchParams({ query: searchRequest });
         }
-        //  else {
-        //      setSearchParams({}); 
-        // }
         
         form.reset();
     
@@ -29,7 +24,6 @@ const Movies = () => {
             <input name="search"/>
             <button type='submit'>Search</button>
         </Form>
-            {/* {searchParams.get('query') && (<MovieList searchWord={searchParams.get('query')} />)} */}
             {searchParams.get('query') && (
                 <>
                     <MovieList searchWord={searchParams.get('query')} />
