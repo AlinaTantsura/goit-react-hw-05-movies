@@ -5,7 +5,7 @@ const Container = styled.div(() => {
         minHeight: '100vh',
         maxWidth: '1200px',
         backgroundColor: 'whitesmoke',
-        
+        position: 'relative',
     })
 })
 export default Container;

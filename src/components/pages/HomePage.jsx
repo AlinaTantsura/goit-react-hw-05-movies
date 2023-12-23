@@ -6,7 +6,7 @@ const HomePage = ({ isWrong = false }) => {
     const navigate = useNavigate();
     useEffect(() => {
          if (isWrong) {
-             navigate('/');
+             navigate('/goit-react-hw-05-movies/');
     }
     },[isWrong, navigate])
    

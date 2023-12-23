@@ -10,8 +10,8 @@ const Layout = () => {
       <Container>
         <Header>
       <Navigation>
-        <LinkNav to={'/'}>Home</LinkNav>
-        <LinkNav to={'/movies'}>Movies</LinkNav>
+        <LinkNav to={'/goit-react-hw-05-movies/'}>Home</LinkNav>
+        <LinkNav to={'/goit-react-hw-05-movies/movies'}>Movies</LinkNav>
       </Navigation>
         </Header>
         <Suspense fallback={<Loader></Loader>}>
