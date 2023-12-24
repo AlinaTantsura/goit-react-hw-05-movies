@@ -42,10 +42,10 @@ const MovieList = ({ searchWord = '' }) => {
     return (
         movies && (<ul>
                     {movies.map((movie) => (<ListItem key={movie.id}>
-                        {(location.pathname) === '/movies' ? <LinkStyled to={`${movie.id}`} state={{ from: `/goit-react-hw-05-movies/movies?query=${searchWord}` }}>
+                        {(location.pathname) === '/movies' ? <LinkStyled to={`${movie.id}`} state={{ from: `/movies?query=${searchWord}` }}>
                             {movie.name || movie.title}
                             </LinkStyled>
-                            : <LinkStyled to={`movies/${movie.id}`} state={{ from:'/goit-react-hw-05-movies/'}}>
+                            : <LinkStyled to={`movies/${movie.id}`} state={{ from:'/'}}>
                                 {movie.name || movie.title}
                             </LinkStyled>
                         }
