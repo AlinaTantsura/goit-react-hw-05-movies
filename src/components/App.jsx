@@ -13,8 +13,9 @@ export const App = () => {
   console.log(location)
   return (
     <Routes>
-      <Route path='/goit-react-hw-05-movies/' element={<Layout/>}>
-         <Route index element={<HomePage />} />
+      {/* <Route path='/goit-react-hw-05-movies/' element={<Layout/>}> */}
+       <Route path='/' element={<Layout/>}>
+        <Route index element={<HomePage />} />
         <Route path='movies' element={<Movies />} />
         <Route path='movies/:id' element={<MovieDetails />}>
           <Route path='cast' element={<Cast /> } />
