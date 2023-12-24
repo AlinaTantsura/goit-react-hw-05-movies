@@ -6,7 +6,7 @@ import { Outlet, useLocation, useParams } from "react-router-dom";
 
 const MovieDetails = () => {
     const location = useLocation();
-    const backPage = location.state?.from ?? "/"; 
+    const backPage = location.state?.from ?? "/goit-react-hw-05-movies/"; 
     const searchParams = useParams();
     const { id } = searchParams;
    
