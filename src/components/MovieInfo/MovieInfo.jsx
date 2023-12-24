@@ -10,6 +10,7 @@ const MovieInfo = ({ movieId }) => {
     const location = useLocation();
     const [movieInfo, setMovieInfo] = useState(null);
     const navigate = useNavigate();
+    const backPage = location.state?.from ?? '/goit-react-hw-05-movies/';
     
     useEffect(() => {
         async function getMovieInfo(id) {
@@ -19,12 +20,12 @@ const MovieInfo = ({ movieId }) => {
         }
         catch {
             Notify.failure("There is no information about movie");
-            navigate('/');
+            navigate(backPage);
         }
         } 
         
         getMovieInfo(movieId);
-    }, [movieId, navigate])
+    }, [movieId, navigate, backPage])
 
     return (
     <>

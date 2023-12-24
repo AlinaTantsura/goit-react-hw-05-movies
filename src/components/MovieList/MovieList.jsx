@@ -26,7 +26,7 @@ const MovieList = ({ searchWord = '' }) => {
                     if (resp.data.results.length === 0) {
                         setMovies(null);
                         Notify.failure("There are no movies( Try change search word or reload the page)))")
-                        navigate('/movies');
+                        navigate('/goit-react-hw-05-movies/movies');
                         return
                     }
                     setMovies(resp.data.results);
@@ -42,11 +42,10 @@ const MovieList = ({ searchWord = '' }) => {
     return (
         movies && (<ul>
                     {movies.map((movie) => (<ListItem key={movie.id}>
-                        {/* {(location.pathname) === '/movies' ? <LinkStyled to={`${movie.id}`} state={{ from: `/goit-react-hw-05-movies/movies?query=${searchWord}` }}> */}
-                           {(location.pathname) === '/movies' ? <LinkStyled to={`${movie.id}`} state={{ from: `/movies?query=${searchWord}` }}> 
+                        {(location.pathname) === '/goit-react-hw-05-movies/movies' ? <LinkStyled to={`${movie.id}`} state={{ from: `/goit-react-hw-05-movies/movies?query=${searchWord}` }}>
                         {movie.name || movie.title}
                             </LinkStyled>
-                            : <LinkStyled to={`movies/${movie.id}`} state={{ from:'/'}}>
+                            : <LinkStyled to={`/goit-react-hw-05-movies/movies/${movie.id}`} state={{ from:'/goit-react-hw-05-movies/'}}>
                                 {movie.name || movie.title}
                             </LinkStyled>
                         }

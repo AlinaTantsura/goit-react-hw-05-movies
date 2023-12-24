@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from "styled-components";
 
 export const Navigation = styled.nav(() => {
@@ -10,7 +10,7 @@ export const Navigation = styled.nav(() => {
     })
 });
 
-export const LinkNav = styled(NavLink)`
+export const LinkNav = styled(Link)`
     text-decoration: none;
     color: black;
     font-weight: 500;
